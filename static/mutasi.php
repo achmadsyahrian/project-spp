@@ -86,17 +86,6 @@ $tahunAjaran = query("SELECT * FROM tahun_ajaran");
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-
-
-
 	<?php 
 		include('partials/script.php');
 	?>

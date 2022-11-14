@@ -42,7 +42,7 @@ $result = query("SELECT * FROM $titleTable");
 				<div class="container-fluid p-0 ">
 
 					<h1 class="h2 mb-3 animate__animated animate__fadeInUp animate__fast">Form Data Users</h1>
-					<?= $nilai; ?>
+					<!-- <?= $nilai; ?> -->
 					<div class="row animate__animated animate__fadeInUp slower">
 						<div class="col-12 d-flex">
 							<div class="card flex-fill p-3" style="border-radius:10px;">
