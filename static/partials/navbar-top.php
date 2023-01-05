@@ -25,10 +25,10 @@ $account = $_SESSION['level'];
 				</a>
 
 				<a class='nav-link dropdown-toggle d-none d-sm-inline-block' href='#' data-bs-toggle='dropdown'>
-					<img src='img/avatars/avatar.png' class='avatar img-fluid rounded me-2' alt='Admin' /> <span class='text-dark'><?= $account; ?></span>
+					<img src='<?=$root?>img/avatars/avatar.png' class='avatar img-fluid rounded me-2' alt='Admin' /> <span class='text-dark'><?= $account; ?></span>
 				</a>
 				<div class='dropdown-menu dropdown-menu-end'>
-					<a class='dropdown-item' href='logout'>Log out</a>
+					<a class='dropdown-item' href='<?=$root?>pages/autentikasi/logout'>Log out</a>
 				</div>
 			</li>
 		</ul>

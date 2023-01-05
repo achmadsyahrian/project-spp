@@ -1,5 +1,5 @@
-<script src="js/app.js"></script>
-	<script src="js/jquery-3.6.1.min.js"></script>
+<script src="<?=$root?>js/app.js"></script>
+	<script src="<?=$root?>js/jquery-3.6.1.min.js"></script>
 
 	<!-- Data Tables -->
 	<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
