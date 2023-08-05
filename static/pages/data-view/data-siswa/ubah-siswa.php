@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (!isset($_SESSION['level'])) {
 	header("Location:../../autentikasi/login");
@@ -6,7 +6,7 @@ if (!isset($_SESSION['level'])) {
 	header("Location:../../index");
 }
 
-$titlePage ="Siswa";
+$titlePage = "Siswa";
 
 require '../../functions.php';
 $tahun_ajaran = query("SELECT * FROM data_siswa");
@@ -29,7 +29,7 @@ if (isset($_POST['ubah'])) {
 		} else {
 			header("Location:data-siswa");
 		}
-	}	
+	}
 }
 
 if (isset($_POST['back'])) {
@@ -43,21 +43,21 @@ if (isset($_POST['back'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-	<?php 
-		include('../../../partials/head.php');
-	?>
+<?php
+include('../../../partials/head.php');
+?>
 
 <body>
 	<div class="wrapper">
 
-	<?php 
+		<?php
 		include('../../../partials/navbar.php');
-	?>
-	
+		?>
+
 		<div class="main">
 
-			<?php 
-				include('../../../partials/navbar-top.php');
+			<?php
+			include('../../../partials/navbar-top.php');
 			?>
 
 			<main class="content">
@@ -96,7 +96,7 @@ if (isset($_POST['back'])) {
 											</th>
 											<td>:</td>
 											<td>
-												<input type="text" name="alamat" id="alamat" class="form-control" style="width:400px;" value="<?= $siswa["alamat_siswa"]; ?>"> 
+												<input type="text" name="alamat" id="alamat" class="form-control" style="width:400px;" value="<?= $siswa["alamat_siswa"]; ?>">
 											</td>
 										</tr>
 										<tr>
@@ -106,10 +106,18 @@ if (isset($_POST['back'])) {
 											<td>:</td>
 											<td>
 												<select class="form-select mb-0" name="tahunAjaran" id="tahunAjaran" style="width:400px;">
-														<option <?php if ($siswa['tahun_ajaran'] == "2019/2020") { echo 'selected'; }?>>2019/2020</option>
-														<option <?php if ($siswa['tahun_ajaran'] == "2020/2021") { echo 'selected'; }?>>2020/2021</option>
-														<option <?php if ($siswa['tahun_ajaran'] == "2021/2022") { echo 'selected'; }?>>2021/2022</option>
-														<option <?php if ($siswa['tahun_ajaran'] == "2022/2023") { echo 'selected'; }?>>2022/2023</option>
+													<option <?php if ($siswa['tahun_ajaran'] == "2019/2020") {
+																	echo 'selected';
+																} ?>>2019/2020</option>
+													<option <?php if ($siswa['tahun_ajaran'] == "2020/2021") {
+																	echo 'selected';
+																} ?>>2020/2021</option>
+													<option <?php if ($siswa['tahun_ajaran'] == "2021/2022") {
+																	echo 'selected';
+																} ?>>2021/2022</option>
+													<option <?php if ($siswa['tahun_ajaran'] == "2022/2023") {
+																	echo 'selected';
+																} ?>>2022/2023</option>
 												</select>
 											</td>
 										</tr>
@@ -119,32 +127,32 @@ if (isset($_POST['back'])) {
 							<div class="card-footer animate__animated animate__fadeInUp animate__slow">
 								<h5 class="card-title mb-0 ms-3 text-start">
 									<a class="" href="">
-										<button name="back" class="btn btn-danger" type="submit" >
-										<i class='align-middle mb-1' data-feather='arrow-left-circle'></i>
+										<button name="back" class="btn btn-danger" type="submit">
+											<i class='align-middle mb-1' data-feather='arrow-left-circle'></i>
 											Kembali
 										</button>
 										<button name="ubah" class="btn btn-primary" type="submit">
-										<i class='align-middle mb-1' data-feather='save'></i>
+											<i class='align-middle mb-1' data-feather='save'></i>
 											Simpan Data
 										</button>
 									</a>
-								</h5> 
+								</h5>
 							</div>
 						</div>
 					</form>
 				</div>
 			</main>
 
-			<?php 
-				include('../../../partials/footer.php');
+			<?php
+			include('../../../partials/footer.php');
 			?>
 
 		</div>
 	</div>
 
 
-	<?php 
-		include('../../../partials/script.php');
+	<?php
+	include('../../../partials/script.php');
 	?>
 
 </body>

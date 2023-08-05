@@ -50,7 +50,7 @@ $tahun_ajaran = query("SELECT * FROM tahun_ajaran");
 			<?php 
 				include('../../../partials/navbar-top.php');
 			?>
-
+			
 			<main class="content">
 				<div class="container-fluid p-0">
 

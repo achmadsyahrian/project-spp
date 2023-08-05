@@ -5,8 +5,6 @@ if (!isset($_SESSION['level'])) {
 	header("Location:autentikasi/login");
 }
 
-include('../partials/session.php');
-
 require 'functions.php';
 
 $titlePage = "Dashboard";

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 14, 2022 at 05:20 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.0.23
+-- Host: 127.0.0.1
+-- Generation Time: Feb 23, 2023 at 05:41 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -78,7 +78,8 @@ INSERT INTO `data_siswa` (`id`, `kode_siswa`, `nama_siswa`, `alamat_siswa`, `tah
 (21, 'S021', 'Gabriel Jesus', 'London City Per. St', '2019/2020'),
 (22, 'S022', 'Cristiano Ronaldo', 'Portugal Birmingham. Est No. 17', '2021/2022'),
 (23, 'S023', 'Lionel Messi', 'Argentina Browway. St No . 19', '2022/2023'),
-(24, 'S024', 'Harry Maguire', 'London Bright No. 17NM', '2020/2021');
+(24, 'S024', 'Harry Maguire', 'London Bright No. 17NM', '2020/2021'),
+(33, 'S025', 'asd', 'asd', '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -102,7 +103,8 @@ INSERT INTO `tahun_ajaran` (`id`, `kode_tahun_ajaran`, `tahun_ajaran`, `keterang
 (1, 'TA001', '2020/2021', 'Tahun Pertama', 400000),
 (2, 'TA002', '2019/2020', 'Tahun Kedua', 600000),
 (3, 'TA003', '2021/2022', 'Tahun Ketiga', 800000),
-(4, 'TA004', '2022/2023', 'Tahun Keempat', 100000);
+(4, 'TA004', '2022/2023', 'Tahun Keempat', 100000),
+(13, 'TA005', '2024/2025', 'Tahun Kelima', 500000);
 
 -- --------------------------------------------------------
 
@@ -131,9 +133,14 @@ CREATE TABLE `transaksi` (
 INSERT INTO `transaksi` (`id_transaksi`, `no_transaksi`, `kode_siswa`, `kode_tahun_ajaran`, `id_bulan`, `bulan_bayar`, `jenis_transaksi`, `status`, `total_biaya`, `total_bayar`, `tgl_transaksi`) VALUES
 (1, 'TR01', 'S01', 'TA001', 1, 'JANUARI', 'Pembayaran SPP Bulan JANUARI - 2020/2021', 'Lunas', 400000, 400000, '2022-10-12'),
 (39, 'TR02', 'S01', 'TA001', 2, 'FEBRUARI', 'Pembayaran SPP Bulan FEBRUARI - 2020/2021', 'Lunas', 400000, 400000, '2022-11-14'),
-(40, 'TR03', 'S01', 'TA001', 3, 'MARET', 'Pembayaran SPP Bulan MARET - 2020/2021', 'Proses', 400000, 10000, '2022-10-24'),
+(40, 'TR03', 'S01', 'TA001', 3, 'MARET', 'Pembayaran SPP Bulan MARET - 2020/2021', 'Lunas', 400000, 400000, '2023-02-09'),
 (41, 'TR04', 'S05', 'TA001', 5, 'MEI', 'Pembayaran SPP Bulan MEI - 2020/2021', 'Lunas', 400000, 400000, '2022-10-24'),
-(42, 'TR05', 'S05', 'TA001', 1, 'JANUARI', 'Pembayaran SPP Bulan JANUARI - 2020/2021', 'Lunas', 400000, 400000, '2022-11-14');
+(42, 'TR05', 'S05', 'TA001', 1, 'JANUARI', 'Pembayaran SPP Bulan JANUARI - 2020/2021', 'Lunas', 400000, 400000, '2022-11-14'),
+(43, 'TR06', 'S01', 'TA001', 4, 'APRIL', 'Pembayaran SPP Bulan APRIL - 2020/2021', 'Lunas', 400000, 400000, '2023-02-16'),
+(44, 'TR07', 'S01', 'TA002', 1, 'JANUARI', 'Pembayaran SPP Bulan JANUARI - 2019/2020', 'Lunas', 600000, 600000, '2023-02-16'),
+(45, 'TR08', 'S01', 'TA001', 5, 'MEI', 'Pembayaran SPP Bulan MEI - 2020/2021', 'Lunas', 400000, 400000, '2023-02-23'),
+(46, 'TR09', 'S01', 'TA001', 6, 'JUNI', 'Pembayaran SPP Bulan JUNI - 2020/2021', 'Proses', 400000, 200000, '2023-02-23'),
+(47, 'TR010', 'S01', 'TA005', 1, 'JANUARI', 'Pembayaran SPP Bulan JANUARI - 2024/2025', 'Lunas', 500000, 500000, '2023-02-23');
 
 -- --------------------------------------------------------
 
@@ -156,7 +163,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `id_user`, `username`, `password`, `nama_user`, `level`) VALUES
 (43, 'US042', 'admin', '698d51a19d8a121ce581499d7b701668', 'Achmad', 'Admin'),
-(69, 'US044', 'user', '698d51a19d8a121ce581499d7b701668', 'Achmad', 'User');
+(71, 'US070', 'user1', '24c9e15e52afc47c225b757e7bee1f9d', 'user1', 'User'),
+(72, 'US072', 'refdi pasaribu', 'fe645d1106c0509fe0437dc639d55528', 'refdi', 'User'),
+(73, 'US073', 'refdi1', '25ba08df6aad565a60dd460f295c2fbd', 'refdi1', 'User');
 
 --
 -- Indexes for dumped tables
@@ -206,25 +215,25 @@ ALTER TABLE `bulan`
 -- AUTO_INCREMENT for table `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

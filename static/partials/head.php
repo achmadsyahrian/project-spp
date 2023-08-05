@@ -1,6 +1,6 @@
 <?php 
 
-$root = "http://localhost/project/git_environment/project-spp/static/";
+$root = "http://localhost:8080/project/project-spp/project-spp_AchmadSyahrian/static/";
 
 ?>
 
